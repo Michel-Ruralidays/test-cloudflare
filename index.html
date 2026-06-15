@@ -14,14 +14,35 @@
     <p class="eyebrow">GitHub to Cloudflare</p>
     <h1>Deployment test page</h1>
     <p class="intro">
-      This simple static site is here to verify that pushes to the repository trigger a successful Cloudflare deployment.
+      This static page now includes a tiny Worker endpoint so the project can use runtime variables and secrets safely.
     </p>
     <div class="status-card">
       <p class="label">Target repository</p>
       <p class="value">Michel-Ruralidays/test-cloudflare</p>
       <p class="label">Page type</p>
-      <p class="value">Static HTML + CSS</p>
+      <p class="value">Static assets + Worker</p>
+      <p class="label">Runtime env check</p>
+      <p class="value" id="env-status">Checking /api/env-check...</p>
     </div>
   </main>
+  <script>
+    async function loadEnvStatus() {
+      const output = document.getElementById("env-status");
+
+      try {
+        const response = await fetch("/api/env-check");
+        const data = await response.json();
+        output.textContent =
+          "DEMO_VALUE=" +
+          (data.demoValue ?? "not set") +
+          " | DEMO_SECRET configured=" +
+          (data.secretConfigured ? "yes" : "no");
+      } catch (error) {
+        output.textContent = "Env check unavailable";
+      }
+    }
+
+    loadEnvStatus();
+  </script>
 </body>
 </html>

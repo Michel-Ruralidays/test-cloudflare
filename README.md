@@ -1,12 +1,19 @@
 # test-cloudflare
 
-Simple static page for testing GitHub-to-Cloudflare deployment.
+Simple Cloudflare deployment test with static assets plus a minimal Worker runtime.
 
 ## Files
 
 - `index.html`
 - `styles.css`
+- `worker.js`
+- `wrangler.jsonc`
 
-## Deploy expectation
+## Runtime env test
 
-If this repository is connected to Cloudflare Pages, pushing to `main` should trigger a new deployment automatically.
+This project now includes `/api/env-check`, which reads:
+
+- `DEMO_VALUE` as a normal environment variable
+- `DEMO_SECRET` as a secret
+
+The endpoint only returns whether the secret exists. It does not expose the secret value.
