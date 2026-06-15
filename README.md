@@ -14,6 +14,7 @@ Simple Cloudflare deployment test with static assets plus a minimal Worker runti
 This project now includes `/api/env-check`, which reads:
 
 - `DEMO_VALUE` as a normal environment variable
+- `FEATURE_FLAG_A` as a normal environment variable
 - `DEMO_SECRET` as a secret
 
 The endpoint only returns whether the secret exists. It does not expose the secret value.

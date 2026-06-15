@@ -6,6 +6,7 @@ export default {
       return Response.json({
         demoValue: env.DEMO_VALUE ?? null,
         secretConfigured: Boolean(env.DEMO_SECRET),
+        featureFlagA: env.FEATURE_FLAG_A ?? null,
       });
     }
 

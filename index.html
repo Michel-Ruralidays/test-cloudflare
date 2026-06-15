@@ -35,6 +35,8 @@
         output.textContent =
           "DEMO_VALUE=" +
           (data.demoValue ?? "not set") +
+          " | FEATURE_FLAG_A=" +
+          (data.featureFlagA ?? "not set") +
           " | DEMO_SECRET configured=" +
           (data.secretConfigured ? "yes" : "no");
       } catch (error) {
