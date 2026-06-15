@@ -3,6 +3,9 @@
   "name": "test-cloudflare",
   "main": "worker.js",
   "compatibility_date": "2026-06-15",
+  "vars": {
+    "FEATURE_FLAG_A": "1"
+  },
   "assets": {
     "directory": ".",
     "binding": "ASSETS"

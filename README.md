@@ -27,3 +27,8 @@ This project also includes `/api/hello` for a minimal Worker response test.
 
 This project also includes `/api/token-check`, which returns whether `API_TOKEN`
 is configured as a secret without exposing the secret value.
+
+## Recommended config split
+
+Store plaintext runtime config like `FEATURE_FLAG_A` in `wrangler.jsonc`.
+Store secrets like `API_TOKEN` in the Cloudflare dashboard as secrets.
