@@ -18,3 +18,7 @@ This project now includes `/api/env-check`, which reads:
 - `DEMO_SECRET` as a secret
 
 The endpoint only returns whether the secret exists. It does not expose the secret value.
+
+## Simple edge test
+
+This project also includes `/api/hello` for a minimal Worker response test.
