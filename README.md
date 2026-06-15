@@ -22,3 +22,8 @@ The endpoint only returns whether the secret exists. It does not expose the secr
 ## Simple edge test
 
 This project also includes `/api/hello` for a minimal Worker response test.
+
+## Secret-backed test
+
+This project also includes `/api/token-check`, which returns whether `API_TOKEN`
+is configured as a secret without exposing the secret value.

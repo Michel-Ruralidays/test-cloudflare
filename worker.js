@@ -9,6 +9,15 @@ export default {
       });
     }
 
+    if (url.pathname === "/api/token-check") {
+      const hasToken = typeof env.API_TOKEN === "string" && env.API_TOKEN.length > 0;
+
+      return Response.json({
+        ok: true,
+        tokenConfigured: hasToken,
+      });
+    }
+
     if (url.pathname === "/api/env-check") {
       return Response.json({
         demoValue: env.DEMO_VALUE ?? null,
